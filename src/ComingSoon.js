@@ -30,11 +30,11 @@ const ComingSoon = () => {
     // Update the countdown every second
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
-    }, 1000);
+    },1000); 
 
     // Clean up the interval on component unmount
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]); // Include calculateTimeLeft in the dependency array
 
   return (
     <div className="coming-soon-container">

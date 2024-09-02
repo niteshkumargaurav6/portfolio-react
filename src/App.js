@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';*/
 import ComingSoon from "./ComingSoon";
 import './App.css';
 
