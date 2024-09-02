@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./ComingSoon.css";
 
 const ComingSoon = () => {
   // Set your target date here
   const targetDate = new Date("2024-12-31T23:59:59").getTime();
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
   // Function to calculate time left until the target date
-  function calculateTimeLeft() {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -24,13 +22,15 @@ const ComingSoon = () => {
     }
 
     return timeLeft;
-  }
+  }, [targetDate]); // Memoize the function with useCallback
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
     // Update the countdown every second
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
-    },1000); 
+    }, 1000);
 
     // Clean up the interval on component unmount
     return () => clearInterval(timer);
