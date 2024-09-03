@@ -21,13 +21,6 @@
   "test": "react-scripts test",
   "eject": "react-scripts eject"
 },
-
- /*"scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },*/
   "eslintConfig": {
     "extends": [
       "react-app",
