@@ -3,7 +3,7 @@ import "./ComingSoon.css";
 
 const ComingSoon = () => {
   // Set your target date here
-  const targetDate = new Date("2024-12-31T23:59:59").getTime();
+  const targetDate = new Date("2025-07-25T23:59:59").getTime();
 
   // Function to calculate time left until the target date
   const calculateTimeLeft = useCallback(() => {
@@ -19,10 +19,18 @@ const ComingSoon = () => {
         minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
         seconds: Math.floor((difference % (1000 * 60)) / 1000),
       };
+    } else {
+      // Time's up case
+      timeLeft = {
+        days: "0",
+        hours: "00",
+        minutes: "00",
+        seconds: "00",
+      };
     }
 
     return timeLeft;
-  }, [targetDate]); // Memoize the function with useCallback
+  }, [targetDate]);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 

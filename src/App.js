@@ -1,25 +1,16 @@
-/*import logo from './logo.svg';*/
-import ComingSoon from "./ComingSoon";
+import React from 'react';
+import ComingSoon from './ComingSoon'; // Your existing component
+import { FloatingDockDemo } from './components/FloatingDockDemo'; // Import FloatingDockDemo
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-	  <ComingSoon />
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <ComingSoon /> {/* Your existing component */}
+      
+      {/* Add FloatingDockDemo below */}
+      {/*<h2>Explore the Floating Dock</h2>*/}
+      <FloatingDockDemo /> {/* Floating Dock Demo */}
     </div>
   );
 }
